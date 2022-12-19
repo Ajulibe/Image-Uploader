@@ -1,16 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Main from "./pages/Main";
+import reportWebVitals from "./reportWebVitals";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Global } from "@emotion/react";
+import { GlobalStyles } from "styles";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+ document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+ <React.StrictMode>
+  <ChakraProvider>
+   <Global styles={GlobalStyles} />
+   <Main />
+  </ChakraProvider>
+ </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
