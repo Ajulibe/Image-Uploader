@@ -11,4 +11,7 @@ export enum COLORS {
  white = "#fff",
  lightblue = " rgba(36, 38, 52, 1)",
  backgroundWhite = "rgba(240, 240, 241, 1)",
+ black300 = "rgba(0, 0, 0, 0.3)",
+ grey100 = "rgba(235, 239, 242, 1)",
+ grey500 = "rgba(36, 38, 52, 1)",
 }

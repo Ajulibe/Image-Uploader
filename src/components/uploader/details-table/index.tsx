@@ -15,11 +15,7 @@ interface IProps {
  fileDetailsFromServer: UploadcareFile | undefined;
 }
 
-export const ImageDetailsTable: React.FC<IProps> = ({
- fileDetailsFromServer,
-}) => {
- console.log(fileDetailsFromServer);
-
+const ImageDetailsTable: React.FC<IProps> = ({ fileDetailsFromServer }) => {
  const megapixel =
   (fileDetailsFromServer?.imageInfo?.width! *
    fileDetailsFromServer?.imageInfo?.height!) /
@@ -30,7 +26,7 @@ export const ImageDetailsTable: React.FC<IProps> = ({
    {fileDetailsFromServer?.mimeType ? (
     <ImageDetails>
      <TableContainer>
-      <Table variant="striped">
+      <Table>
        <Thead>
         <Tr>
          <Th>Name</Th>
@@ -56,3 +52,5 @@ export const ImageDetailsTable: React.FC<IProps> = ({
   </>
  );
 };
+
+export default ImageDetailsTable;

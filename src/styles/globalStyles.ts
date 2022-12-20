@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import { COLORS } from "./colors";
+import { flexmiddle } from "utils/mixins";
 
 export const GlobalStyles = css`
  html {
@@ -7,19 +8,18 @@ export const GlobalStyles = css`
  }
 
  body {
-  width: 100%;
+  margin: 0;
+  width: 100vw;
   height: 100vh;
-  min-height: 100%;
   font-family: "Inter", , BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: ${COLORS.background};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.4s ease-in;
+  ${flexmiddle}
+  transition: all 0.2s ease-in;
+  box-sizing: border-box;
  }
 
  a {

@@ -27,13 +27,13 @@ export const LoadingSpinner = styled.div`
   animation: spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: ${COLORS.primary} transparent transparent transparent;
  }
- .spinner div:nth-child(1) {
+ .spinner div:nth-of-type(1) {
   animation-delay: -0.45s;
  }
- .spinner div:nth-child(2) {
+ .spinner div:nth-of-type(2) {
   animation-delay: -0.3s;
  }
- .spinner div:nth-child(3) {
+ .spinner div:nth-of-type(3) {
   animation-delay: -0.15s;
  }
  @keyframes spinner {
@@ -44,4 +44,15 @@ export const LoadingSpinner = styled.div`
    transform: rotate(360deg);
   }
  }
+`;
+
+export const Wrapper = styled.div`
+ position: absolute;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 100vw;
+ height: 100vh;
+ background-color: ${COLORS.black300};
+ z-index: 100;
 `;

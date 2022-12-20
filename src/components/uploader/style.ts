@@ -8,21 +8,26 @@ interface IProps {
 
 export const Container = styled.div`
  position: "relative";
- width: "100vw";
  height: "100vh";
- ${flexmiddle}
+ ${flexmiddle};
+ flex-direction: column;
+ overflow: hidden;
+
+ .image__wrapper {
+  animation: ${appear} 0.6s ease-in;
+  overflow: hidden;
+  img {
+   max-height: 100vh;
+  }
+ }
 `;
 
 export const ContainerSection = styled.div<IProps>`
- min-width: ${({ url }) => url && "80vw"};
- ${flexmiddle}
+ min-width: ${({ url }) => url && "100vw"};
+ ${flexmiddle};
  position: relative;
  max-height: 100vh;
  background: ${({ url }) => url && `${COLORS.backgroundWhite}`};
-
- .image__wrapper {
-  animation: ${appear} 0.8s ease-in;
- }
 
  .button__container {
   position: absolute;
@@ -43,12 +48,26 @@ export const ContainerSection = styled.div<IProps>`
   }
 
   button {
-   padding: 14px 40px;
-   border-radius: 40px;
+   padding: 1.4rem 4rem;
+   border-radius: 4rem;
    font-weight: bold;
-   font-size: 16px;
+   font-size: 1.6rem;
    margin: 0 10px;
    filter: drop-shadow(4px 4px 48px rgba(0, 0, 0, 0.18));
+  }
+
+  @media screen and (max-width: 500px) {
+   button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+   }
+  }
+
+  @media screen and (max-width: 345px) {
+   button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+   }
   }
  }
 `;
@@ -56,33 +75,44 @@ export const ContainerSection = styled.div<IProps>`
 export const Section = styled.div`
  height: 100%;
  font-weight: 400;
- font-size: 16px;
+ font-size: 14px;
  color: ${COLORS.lightblue};
- width: 100%;
  padding: 40px;
  ${flexmiddle}
  text-align: center;
- overflow: scroll;
+ overflow: hidden;
  transition: all 1s ease-in;
+
+ @media only screen and (max-width: 500px) {
+  padding: 20px;
+ }
 `;
 
 export const ImageDetails = styled.div`
  position: absolute;
+ width: 100%;
  top: 40px;
  left: 0;
  z-index: 5;
  background-color: ${COLORS.white};
  transition: all 1s ease-in;
- font-size: 16px;
  border-radius: 18px;
  padding: 3.2rem;
  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
   rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
- th,
- td {
+ td,
+ tr {
   text-align: left;
   font-size: 16px;
-  color: ${COLORS.primary};
+  color: ${COLORS.grey500};
+  border: 1px solid ${COLORS.grey100};
+ }
+
+ th {
+  color: ${COLORS.grey500};
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
  }
 `;

@@ -5,7 +5,7 @@ interface IProps {
  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const FileInput = ({ acceptedFormat, onChange, ...props }: IProps) => {
+const FileInput = ({ acceptedFormat, onChange, ...props }: IProps) => {
  return (
   <chakra.input
    position="absolute"
@@ -25,3 +25,5 @@ export const FileInput = ({ acceptedFormat, onChange, ...props }: IProps) => {
   />
  );
 };
+
+export default FileInput;

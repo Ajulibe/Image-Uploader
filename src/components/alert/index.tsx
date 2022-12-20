@@ -1,7 +1,8 @@
 import { ToastOptions, toast } from "react-toastify";
 import { COLORS } from "styles/colors";
+import "react-toastify/dist/ReactToastify.css";
 
-type Message = "error" | "success";
+type Message = "error" | "success" | "info";
 
 export const doToast = (message: string, type: Message) => {
  let bgColor;
@@ -12,6 +13,8 @@ export const doToast = (message: string, type: Message) => {
   bgColor = COLORS.success;
  } else if (type === "error") {
   bgColor = COLORS.red;
+ } else if (type === "info") {
+  bgColor = COLORS.white;
  }
 
  //custom options for toast
