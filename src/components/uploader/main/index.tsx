@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
-import { Section, ContainerSection, Container } from "../style";
+import { Section, ContainerSection, Container } from "./style";
 import { useImageUploader } from "../hook/use-image-uploader";
 import { SpinnerWrapper } from "components/spinner";
 import ImageDetailsTable from "../details-table";
@@ -46,7 +46,7 @@ export const ImageUploader: React.FC<IProps> = ({
     <ImageDetailsTable fileDetailsFromServer={fileDetailsFromServer} />
 
     {url !== "" ? (
-     <div className="image__wrapper">
+     <div className="image__wrapper" onClick={downloadImage}>
       <img src={url} alt="upload" style={{ height: "auto", width: "auto" }} />
      </div>
     ) : null}

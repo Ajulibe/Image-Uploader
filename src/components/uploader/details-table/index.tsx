@@ -1,5 +1,5 @@
 import React from "react";
-import { ImageDetails } from "../style";
+import { ImageDetails } from "./style";
 import {
  Table,
  Thead,

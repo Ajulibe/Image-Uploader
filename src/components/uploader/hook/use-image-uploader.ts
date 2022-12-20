@@ -46,7 +46,6 @@ export const useImageUploader = () => {
  };
 
  const downloadImage = () => {
-  doToast("Downloading Image", "info");
   try {
    if (imageUrl !== "") {
     saveAs(imageUrl, "image.jpg");
